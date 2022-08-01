@@ -76,15 +76,16 @@ VALUES
 UPDATE Orders
 SET customer_id = 5
 WHERE order_id = 25;
+
 ------------------ 5 ------------------
-CREATE TABLE Order_items (
+CREATE TABLE OrderItems (
 	order_item_id VARCHAR(255) NOT NULL,
 	order_id VARCHAR(255) FOREIGN KEY REFERENCES Orders(order_id),
 	product_id VARCHAR(255) FOREIGN KEY REFERENCES Product(product_id),
 	quantity int NOT NULL,
 	unit_price int NOT NULL
 );
-INSERT INTO Order_items
+INSERT INTO OrderItems
 VALUES
 (31, 21, 01, 5, 50),
 (32, 22, 02, 2, 500),
